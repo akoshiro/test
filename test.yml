@@ -1,8 +1,12 @@
 - hosts: all
-  vars_files:
-    /win/tool/test.ps1
   tasks:
+  - name: Clone GitHub repository to local
+    ansible.builtin.git:
+      repo: 'https://github.com/akoshiro/test.git'
+      dest: /win
+      version: main
+
   - name: copy /sbt_smg_work to managed nodes
     ansible.windows.win_copy:
-      src: test.ps1
+      src: /win
       dest: /sbt_smg_work/test/
