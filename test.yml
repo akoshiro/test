@@ -1,6 +1,8 @@
 - hosts: all
+  vars_files:
+    /win/tool/test.ps1
   tasks:
   - name: copy /sbt_smg_work to managed nodes
     ansible.windows.win_copy:
-      src: ./win/tool
+      src: test.ps1
       dest: /sbt_smg_work/test/
