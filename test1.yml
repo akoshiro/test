@@ -2,5 +2,5 @@
   tasks:
   - name: copy /sbt_smg_work to managed nodes
     ansible.windows.win_copy:
-      src: /win
-      dest: /sbt_smg_work/test/
+      src: test.yml
+      dest: /sbt_smg_work/test/test.yml
